@@ -1,10 +1,4 @@
 __author__ = 'Dean M. Sands, III (deanmsands3@gmail.com)'
 
-
-class __init__.py(object):
-    """
-    __init__.py
-    """
-
-    def __init__(self):
-        pass
+from .text import is_text, dos2unix, unixify_folder
+from .compression import find_file_in_any_compressed_form, create_file_in_every_compressed_form

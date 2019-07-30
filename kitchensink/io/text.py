@@ -6,7 +6,7 @@ def is_text(filename):
     with open(filename) as candidate_text_file:
         s = candidate_text_file.read(512)
     text_characters = "".join(map(chr, range(32, 127))) + "\n\r\t\b"
-    _null_trans = str.maketrans("", "", text_characters)
+    _null_trans = str.maketrans("", "", text_characters)  # FIX ME!
     if not s:
         # Empty files are considered text
         return True

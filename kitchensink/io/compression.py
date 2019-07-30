@@ -8,8 +8,8 @@ import bz2
 extension_compressor_table = [
     ("", open),
     (".gz", gzip.open),
-    (".xz", lzma.open),
-    (".bz2", bz2.open)
+    (".xz", lzma.open),  # FIX ME!
+    (".bz2", bz2.open)  # FIX ME!
 ]
 
 
