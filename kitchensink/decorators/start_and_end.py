@@ -4,7 +4,12 @@ __author__ = 'Dean M. Sands, III (deanmsands3@gmail.com)'
 # Borrowed code from: https://stackoverflow.com/a/307263/234826
 class start_and_end(object):
     _debugging = False
-    _logging_function = print
+
+    @classmethod
+    def _print(cls, message):
+        print(cls, message)
+
+    _logging_function = _print
 
     @classmethod
     def do_nothing(cls, func):
@@ -12,11 +17,11 @@ class start_and_end(object):
 
     @classmethod
     def start_func_debugging(cls, func):
-        _logging_function("Function {0} started".format(func))
+        cls._logging_function("Function {0} started".format(func))
 
     @classmethod
     def end_func_debugging(cls, func):
-        _logging_function("Function {0} ended".format(func))
+        cls._logging_function("Function {0} ended".format(func))
 
     start_func = do_nothing
     end_func = do_nothing
@@ -35,7 +40,7 @@ class start_and_end(object):
 
     @classmethod
     def update_logging_function(cls, logging_function):
-    	cls._logging_function = logging_function
+        cls._logging_function = logging_function
 
 
     @classmethod
